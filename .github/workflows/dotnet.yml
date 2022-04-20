@@ -15,7 +15,23 @@ jobs:
           dotnet-version: "6.0.x"
       - name: welcome
         run: echo "welcome from job"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: "6.0.x"
       - name: build
-        run: dotnet build ActionsKataExample
+        run: echo "welcome from job"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: "6.0.x"
       - name: test
-        run: dotnet test ActionsKataExample.Test
+        run: dotnet test ActionsKataExample.Tests
