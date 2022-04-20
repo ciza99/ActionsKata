@@ -1,0 +1,8 @@
+on: [push]
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say
+        run: echo "hello from job"
